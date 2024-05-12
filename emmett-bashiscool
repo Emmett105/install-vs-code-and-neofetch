@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "Do you want to install VS Code? (Y/N)"
+read answer
+
+if [[ ${answer,,} == "y" ]]; then
+    echo "Installing VS Code..."
+    sudo dnf install -y code
+elif [[ ${answer,,} == "n" ]]; then
+    echo "Are you sure? (Y/N)"
+    read answer
+    if [[ ${answer,,} == "y" ]]; then
+      echo "Stopping..."
+    elif [[ ${answer,,} == "n" ]]; then
+      echo "Installing VS Code..."
+      sudo dnf install -y code
+    fi
+fi
+
+echo "Do you want to install neofetch? (Y/N)"
+read answer
+
+if [[ ${answer,,} == "y" ]]; then
+    echo "Installing neofetch..."
+    sudo dnf install -y neofetch
+elif [[ ${answer,,} == "n" ]]; then
+    echo "Are you sure? (Y/N)"
+    read answer
+    if [[ ${answer,,} == "y" ]]; then
+      echo "Stopping..."
+    elif [[ ${answer,,} == "n" ]]; then
+      echo "Installing neofetch..."
+      sudo dnf install -y neofetch
+    fi
+fi
